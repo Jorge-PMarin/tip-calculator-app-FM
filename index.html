@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">
+        <img src="./images/logo.svg" alt="Splitter" />
+      </h1>
+    </header>
+
+    <main class="container">
+      <form>
+        <div class="form-group">
+          <label for="bill" class="form-label">Bill</label>
+          <input type="number" id="bill" class="form-input" />
+        </div>
+
+        <fieldset class="form-group">
+          <legend class="form-label">Select tip %</legend>
+
+          <div>
+            <label for="5">5%</label>
+            <input type="radio" name="tip" id="5" value="5" checked />
+          </div>
+
+          <div>
+            <label for="10">10%</label>
+            <input type="radio" name="tip" id="10" value="10" />
+          </div>
+
+          <div>
+            <label for="15">15%</label>
+            <input type="radio" name="tip" id="15" value="15" />
+          </div>
+
+          <div>
+            <label for="25">25%</label>
+            <input type="radio" name="tip" id="25" value="25" />
+          </div>
+
+          <div>
+            <label for="50">50%</label>
+            <input type="radio" name="tip" id="50" value="50" />
+          </div>
+
+          <div>
+            <label for="custom">Custom</label>
+            <input type="number" placeholder="Custom" class="form-input" />
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <label for="people" class="form-label">Number of People</label>
+          <input type="number" class="form-input" />
+        </div>
+      </form>
+
+      <div class="card">
+        <div class="card-row">
+          <div>
+            <span>Tip amount</span>
+            <small>/ person</small>
+          </div>
+          <span>$4.27</span>
+        </div>
+
+        <div class="class-row">
+          <div>
+            <span>Total</span>
+            <small>/ person</small>
+          </div>
+          <span>$32.79</span>
+        </div>
+
+        <button class="reset-btn">Reset</button>
+      </div>
+    </main>
+
+    <script src="./src/script.js"></script>
+  </body>
+</html>

@@ -1,38 +1,169 @@
 body {
-    background-color: $light-grayish-cyan;
+  background-color: $light-grayish-cyan;
 }
 
 img {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
 }
 
 .container {
-    background-color: $white;
-    border-radius: 1.2rem;
-    padding: 1rem;
+  background-color: $white;
+  border-radius: 1.2rem;
+  padding: 2rem;
 }
 
-form {
-    .form-group {
-        .form-label {
-            display: block;
-            color: $dark-grayish-cyan;
-            margin-bottom: 0.5rem;
-        }
+.form-group {
+  margin-bottom: 1.6rem;
+  .form-label {
+    display: block;
+    color: $dark-grayish-cyan;
+    margin-bottom: 0.5rem;
+  }
+
+  div {
+    position: relative;
+  }
+
+  .input-icon {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 0.8rem;
+    height: 1rem;
+  }
+}
+
+.form-input {
+  border: none;
+  background-color: $very-light-grayish-cyan;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  width: 100%;
+  color: $very-dark-cyan;
+  font-family: inherit;
+  font-size: 1.4rem;
+  padding: 0 0.8rem;
+  text-align: right;
+  cursor: pointer;
+
+  &::placeholder {
+    color: $grayish-cyan;
+  }
+
+  &:focus,
+  &:hover {
+    outline: none;
+    border: 0.12rem solid $strong-cyan;
+  }
+}
+
+.keypad {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  legend {
+    color: $dark-grayish-cyan;
+    margin-bottom: 1rem;
+  }
+
+  &-radio {
+    display: none;
+  }
+
+  label {
+    background-color: $very-dark-cyan;
+    display: block;
+    padding: 0.8rem 0;
+    text-align: center;
+    font-size: 1.4rem;
+    color: $very-light-grayish-cyan;
+    border-radius: 0.3rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $light-grayish-cyan;
+      color: $very-dark-cyan;
+      transition: background-color 0.3s ease;
+    }
+  }
+
+  &-custom {
+    input {
+      height: 100%;
     }
 
-    .form-input {
-        border: none;
-        background-color: $very-light-grayish-cyan;
-        border-radius: 0.5rem;
-        height: 2rem;
-        width: 100%;
+    label {
+      display: none;
     }
+  }
+
+  &-custom,
+  label {
+    width: calc(50% - 0.5rem);
+  }
+}
+
+.card {
+  background-color: $very-dark-cyan;
+  padding: 2.2rem 1.2rem 1.2rem 1.2rem;
+  border-radius: 0.8rem;
+
+  &-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.6rem;
+  }
+
+  &-text {
+    span {
+      display: block;
+      color: $very-light-grayish-cyan;
+      text-transform: capitalize;
+      margin-bottom: 0.4rem;
+    }
+
+    small {
+      color: $grayish-cyan;
+    }
+  }
+
+  &-result {
+    font-size: 2rem;
+    color: $strong-cyan;
+  }
+
+  &-btn {
+    width: 100%;
+    font-family: inherit;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: $strong-cyan;
+    color: $very-dark-cyan;
+    cursor: pointer;
+  }
+
+  &-btn:hover {
+    background-color: $light-grayish-cyan;
+  }
+}
+
+@media (min-width: 400px) {
+  .keypad {
+    &-custom,
+    label {
+      width: calc(33.3% - (2rem / 3));
+    }
+  }
 }

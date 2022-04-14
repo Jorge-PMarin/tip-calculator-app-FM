@@ -3,6 +3,10 @@
    License: none (public domain)
 */
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -53,6 +57,18 @@ table {
   border-spacing: 0;
 }
 
+/* Remove arrows Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove arrows Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 body {
   font-family: "Space Mono", monospace;
 }
@@ -75,20 +91,132 @@ header {
 .container {
   background-color: hsl(0deg, 0%, 100%);
   border-radius: 1.2rem;
-  padding: 1rem;
+  padding: 2rem;
 }
 
-form .form-group .form-label {
+.form-group {
+  margin-bottom: 1.6rem;
+}
+.form-group .form-label {
   display: block;
   color: hsl(186deg, 14%, 43%);
   margin-bottom: 0.5rem;
 }
-form .form-input {
+.form-group div {
+  position: relative;
+}
+.form-group .input-icon {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 0.8rem;
+  height: 1rem;
+}
+
+.form-input {
   border: none;
   background-color: hsl(189deg, 41%, 97%);
   border-radius: 0.5rem;
-  height: 2rem;
+  height: 2.5rem;
   width: 100%;
+  color: hsl(183deg, 100%, 15%);
+  font-family: inherit;
+  font-size: 1.4rem;
+  padding: 0 0.8rem;
+  text-align: right;
+  cursor: pointer;
+}
+.form-input::placeholder {
+  color: hsl(184deg, 14%, 56%);
+}
+.form-input:focus, .form-input:hover {
+  outline: none;
+  border: 0.12rem solid hsl(172deg, 67%, 45%);
+}
+
+.keypad {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.keypad legend {
+  color: hsl(186deg, 14%, 43%);
+  margin-bottom: 1rem;
+}
+.keypad-radio {
+  display: none;
+}
+.keypad label {
+  background-color: hsl(183deg, 100%, 15%);
+  display: block;
+  padding: 0.8rem 0;
+  text-align: center;
+  font-size: 1.4rem;
+  color: hsl(189deg, 41%, 97%);
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.keypad label:hover {
+  background-color: hsl(185deg, 41%, 84%);
+  color: hsl(183deg, 100%, 15%);
+  transition: background-color 0.3s ease;
+}
+.keypad-custom input {
+  height: 100%;
+}
+.keypad-custom label {
+  display: none;
+}
+.keypad-custom,
+.keypad label {
+  width: calc(50% - 0.5rem);
+}
+
+.card {
+  background-color: hsl(183deg, 100%, 15%);
+  padding: 2.2rem 1.2rem 1.2rem 1.2rem;
+  border-radius: 0.8rem;
+}
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+.card-text span {
+  display: block;
+  color: hsl(189deg, 41%, 97%);
+  text-transform: capitalize;
+  margin-bottom: 0.4rem;
+}
+.card-text small {
+  color: hsl(184deg, 14%, 56%);
+}
+.card-result {
+  font-size: 2rem;
+  color: hsl(172deg, 67%, 45%);
+}
+.card-btn {
+  width: 100%;
+  font-family: inherit;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+  cursor: pointer;
+}
+.card-btn:hover {
+  background-color: hsl(185deg, 41%, 84%);
+}
+
+@media (min-width: 400px) {
+  .keypad-custom,
+.keypad label {
+    width: calc(33.3% - 0.6666666667rem);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
